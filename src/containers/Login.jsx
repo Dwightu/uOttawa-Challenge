@@ -24,17 +24,16 @@ export default function Login() {
         // }`
         // })
         // console.log(response)
-        axios.post(`https://interview.outstem.io/auth`,
+        const res = await axios.post(`https://interview.outstem.io/auth`,
             {
-
                 email: email,
                 password: password,
 
             })
-            .then(res => {
-                console.log(res);
-                console.log(res.data);
-            })
+        console.log(res.data);
+        if (res.data.challenge == null) {
+            window.location.replace(`https://interview.outstem.io/oauth?identity=${res.data.identity}`);
+        }
     }
 
     return (
