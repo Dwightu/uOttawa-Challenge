@@ -5,6 +5,7 @@ import React from "react";
 
 import Footer from './containers/Footer';
 import Header from './containers/Header';
+import { MDBBtn } from 'mdb-react-ui-kit';
 
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
     <div className="App container py-3">
       <Header />
       <Routes />
-      <Footer />
     </div>
   );
 }

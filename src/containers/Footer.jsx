@@ -9,7 +9,7 @@ import {
 
 export default function App() {
     return (
-        <MDBFooter className='bg-light text-center text-black'>
+        <MDBFooter className='footer bg-light text-center text-black'>
             <MDBContainer className='p-4 pb-0'>
                 <section className='mb-4'>
                     <a className='btn btn-outline-dark btn-floating m-1' href='#!' role='button'>
