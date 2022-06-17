@@ -14,7 +14,7 @@ function App() {
       <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
         <LinkContainer to="/">
           <Navbar.Brand className="font-weight-bold text-muted px-4">
-            Scratch
+            2022 uOttawa Challenge
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle />
