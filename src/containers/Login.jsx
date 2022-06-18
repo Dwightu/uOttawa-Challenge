@@ -67,7 +67,7 @@ export default function Login() {
         <motion.div className="Login bg-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>>
+            exit={{ opacity: 0 }}>
             <Form className="mx-auto" onSubmit={handleSubmit}>
                 <Flasher position="custom" customStyles={{ top: 79, right: 30 }}>
                     <Message />

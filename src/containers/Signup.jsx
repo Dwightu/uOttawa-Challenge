@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row } from "react-bootstrap";
 import Footer from './Footer'
-
+import { motion } from 'framer-motion'
 
 function Signup() {
 
@@ -14,7 +14,10 @@ function Signup() {
     }
 
     return (
-        <div className="Login bg-light">
+        <motion.div className="Login bg-light"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
             <Form className="mx-auto">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Last Name</Form.Label>
@@ -52,7 +55,7 @@ function Signup() {
                 </p>
             </Form>
             <Footer></Footer>
-        </div>
+        </motion.div>
     )
 }
 
