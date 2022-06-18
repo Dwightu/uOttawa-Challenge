@@ -10,7 +10,7 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     function validateForm() {
-        return email.length > 0 && password.length > 0;
+        return email.length > 0 && password.length > 8;
     }
 
     return (
@@ -33,7 +33,7 @@ function Signup() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Set Your Password</Form.Label>
+                    <Form.Label>Set Your Password (8 digits)</Form.Label>
                     <Form.Control type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">

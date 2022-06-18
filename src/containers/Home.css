@@ -8,6 +8,29 @@
 
 }
 
+@media (max-width:600px) {
+    .right {
+        display: none;
+    }
+
+    .left {
+        margin-top: 300px;
+    }
+
+    .space {
+        display: none !important;
+    }
+
+    .socialBtns {
+        margin-top: 0%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .socilBtns {}
+}
+
+
 .socialBtns {
     display: flex;
     align-self: center;

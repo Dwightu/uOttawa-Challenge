@@ -11,7 +11,7 @@ export default function Links() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/MFA" element={<MFA />} />
+            <Route path="/MFA/:email" element={<MFA />} />
             <Route path="*" element={<NotFound />} />;
         </Routes>
     );

@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row } from "react-bootstrap";
-import { Navigate } from 'react-router-dom';
 import "./Login.css";
 import axios from 'axios';
 import Footer from './Footer'
 import { useNavigate } from "react-router-dom";
+import { flash } from "react-universal-flash";
+import { Flasher } from "react-universal-flash";
+// import Message from "./Message"
+import Alert from 'react-bootstrap/Alert';
 
 
+export const Message = ({ info, content, deleteFlash }) =>
+    <Alert variant={info} onClose={deleteFlash} dismissible>
+        {content}
+    </Alert>
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -32,25 +39,36 @@ export default function Login() {
         // }`
         // })
         // console.log(response)
-        const res = await axios.post(`https://interview.outstem.io/auth`,
+        await axios.post(`https://interview.outstem.io/auth`,
             {
                 email: email,
                 password: password,
 
             })
-        console.log(res.data);
-        if (res.data.challenge == null) {
-            window.location.replace(`https://interview.outstem.io/oauth?identity=${res.data.identity}`);
-        }
-        console.log(res.data.challenge === "MFA")
-        if (res.data.challenge == "MFA") {
-            navigate('/MFA');
-        }
+            .then((res) => {
+                if (res.data.challenge == null) {
+                    window.location.replace(`https://interview.outstem.io/oauth?identity=${res.data.identity}`);
+                }
+
+                console.log(res.data.challenge === "MFA")
+                if (res.data.challenge == "MFA") {
+                    navigate(`/MFA/${email}`);
+                }
+            })
+            .catch((err) => {
+                flash("You entered a wrong Password or information, try again!", 2000, "green")
+            })
+        // console.log(res.status === 200);
+
     }
 
     return (
         <div className="Login bg-light">
             <Form className="mx-auto" onSubmit={handleSubmit}>
+                <Flasher position="custom" customStyles={{ top: 79, right: 30 }}>
+                    <Message />
+
+                </Flasher>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" onChange={e => setEmail(e.target.value)} />
