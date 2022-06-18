@@ -17,12 +17,16 @@ import MyEmailLoginButton from './Btn';
 import { SocialIcon } from 'react-social-icons';
 import "./Home.css"
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'
 
 
 
 function Home() {
     return (
-        <div className="Home bg-light">
+        <motion.div className="Home bg-light"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
             <div className='row justify-content center'>
                 <div className='container col-md-6 left'>
                     <MDBTypography note noteColor='warning'>
@@ -75,7 +79,7 @@ function Home() {
                 </div>
             </div >
             <Footer></Footer>
-        </div >
+        </motion.div >
     )
 }
 

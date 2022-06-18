@@ -10,6 +10,7 @@ import { flash } from "react-universal-flash";
 import { Flasher } from "react-universal-flash";
 // import Message from "./Message"
 import Alert from 'react-bootstrap/Alert';
+import { motion } from 'framer-motion'
 
 
 export const Message = ({ info, content, deleteFlash }) =>
@@ -63,7 +64,10 @@ export default function Login() {
     }
 
     return (
-        <div className="Login bg-light">
+        <motion.div className="Login bg-light"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>>
             <Form className="mx-auto" onSubmit={handleSubmit}>
                 <Flasher position="custom" customStyles={{ top: 79, right: 30 }}>
                     <Message />
@@ -97,6 +101,6 @@ export default function Login() {
                 </p>
             </Form>
             <Footer />
-        </div >
+        </motion.div >
     );
 }
