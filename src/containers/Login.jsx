@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row } from "react-bootstrap";
-import "./Login.css";
+import "./css/Login.css";
 import axios from 'axios';
-import Footer from './Footer'
+import Footer from './layout/Footer'
 import { useNavigate } from "react-router-dom";
 import { flash } from "react-universal-flash";
 import { Flasher } from "react-universal-flash";
-// import Message from "./Message"
 import Alert from 'react-bootstrap/Alert';
 import { motion } from 'framer-motion'
 
@@ -38,7 +37,7 @@ export default function Login() {
         //     "email": "${email}",
         //     "password": "${password}"
         // }`
-        // })
+        // })s
         // console.log(response)
         await axios.post(`https://interview.outstem.io/auth`,
             {

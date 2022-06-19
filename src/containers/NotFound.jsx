@@ -1,7 +1,6 @@
 import React from "react";
-import "./NotFound.css";
-import Footer from './Footer'
-import './Footer.css'
+import "./css/NotFound.css";
+import Footer from './layout/Footer'
 
 export default function NotFound() {
     return (

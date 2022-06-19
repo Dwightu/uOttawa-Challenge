@@ -3,12 +3,13 @@ import { useState } from 'react';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row } from "react-bootstrap";
-import Footer from './Footer'
-import axios from 'axios';
+import Footer from './layout/Footer'
+
 import { useParams } from 'react-router';
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
-import { flash } from "react-universal-flash";
+import { useEffect, useContext } from 'react';
+import AuthContext from '../context/AuthContext'
+import { motion } from 'framer-motion';
 import { Flasher } from "react-universal-flash";
 // import Message from "./Message"
 import Alert from 'react-bootstrap/Alert';
@@ -23,6 +24,7 @@ export const Message = ({ info, content, deleteFlash }) =>
 
 function MFA() {
     const navigate = useNavigate();
+    const { validateMFA } = useContext(AuthContext)
     const [MFA, setMFA] = useState("");
     const pattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     let { email } = useParams();
@@ -41,25 +43,19 @@ function MFA() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('I am doing')
-        const res = await axios.post(`https://interview.outstem.io/auth/mfa`,
-            {
-                email: email,
-                code: MFA,
-            }).catch((err) => {
-                flash("You entered a wrong MFA code, try again!", 2000, "green")
-            })
-        if (res.status === 200) {
-            window.location.replace(`https://interview.outstem.io/oauth?identity=${res.data.identity}`);
-        } else {
-        }
+        // console.log('I am doing')
+        validateMFA(email, MFA)
+
     }
 
     return (
-        <div className="Login bg-light">
+        <motion.div className="Login bg-light"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
 
             <Form className="mx-auto" onSubmit={handleSubmit}>
-                <Flasher position="custom" customStyles={{ top: 80, right: 30 }}>
+                <Flasher position="custom" customStyles={{ top: 80, right: 8 }}>
                     <Message />
 
                 </Flasher>
@@ -83,7 +79,7 @@ function MFA() {
                 </p>
             </Form>
             <Footer></Footer>
-        </div>)
+        </motion.div>)
 }
 
 export default MFA

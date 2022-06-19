@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import Footer from './Footer'
+import Footer from './layout/Footer'
 import {
     MDBCarousel,
     MDBCarouselInner,
@@ -9,13 +8,8 @@ import {
     MDBCarouselCaption,
     MDBTypography
 } from 'mdb-react-ui-kit';
-import { Form } from 'react-bootstrap';
-import { Container, Button } from 'react-bootstrap';
 import { GoogleLoginButton, MicrosoftLoginButton, FacebookLoginButton } from "react-social-login-buttons";
-import { Col, Row } from 'react-bootstrap';
-import MyEmailLoginButton from './Btn';
-import { SocialIcon } from 'react-social-icons';
-import "./Home.css"
+import "./css/Home.css"
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row } from "react-bootstrap";
-import Footer from './Footer'
+import Footer from './layout/Footer'
 import { motion } from 'framer-motion'
 
 function Signup() {

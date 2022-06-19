@@ -3,16 +3,17 @@ import Routes from "./Routes";
 
 import React from "react";
 
-import Footer from './containers/Footer';
-import Header from './containers/Header';
-import { MDBBtn } from 'mdb-react-ui-kit';
+import Header from './containers/layout/Header';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
   return (
     <div className="App container py-3">
       <Header />
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </div>
   );
 }
