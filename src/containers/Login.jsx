@@ -6,10 +6,12 @@ import "./css/Login.css";
 import axios from 'axios';
 import Footer from './layout/Footer'
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import { flash } from "react-universal-flash";
 import { Flasher } from "react-universal-flash";
 import Alert from 'react-bootstrap/Alert';
 import { motion } from 'framer-motion'
+import AuthContext from "../context/AuthContext";
 
 
 export const Message = ({ info, content, deleteFlash }) =>
@@ -21,6 +23,8 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const { validateLogin } = useContext(AuthContext)
+
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -37,7 +41,7 @@ export default function Login() {
         //     "email": "${email}",
         //     "password": "${password}"
         // }`
-        // })s
+        // })
         // console.log(response)
         await axios.post(`https://interview.outstem.io/auth`,
             {
@@ -96,7 +100,7 @@ export default function Login() {
                 </Container>
 
                 <p className="forgot-password mt-2 text-right">
-                    Forgot <a href="#">password?</a>
+                    Forgot <a href="/resetPassword">password?</a>
                 </p>
             </Form>
             <Footer />
