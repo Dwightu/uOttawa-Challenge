@@ -31,9 +31,9 @@ function Home() {
 
                         </div>
                         <div className='container mt-3 pt-5 socilBtns mx-auto' >
-                            <MicrosoftLoginButton onClick={() => alert("Hello")} />
-                            <GoogleLoginButton onClick={() => alert("Hello")} />
-                            <FacebookLoginButton onClick={() => alert("Hello")} />
+                            <MicrosoftLoginButton onClick={() => alert("At present, we only support Email as Login")} />
+                            <GoogleLoginButton onClick={() => alert("At present, we only support Email as Login")} />
+                            <FacebookLoginButton onClick={() => alert("At present, we only support Email as Login")} />
                             <div className='container'>
                                 <p className="mt-2 text-right">
                                     Want to use <Link to="/login">Email?</Link>
