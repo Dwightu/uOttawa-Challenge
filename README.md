@@ -5,7 +5,7 @@ This is an unified identity authentication interface called AuthApp for all of O
 ## The Challenge
 Recently, the business team proposed a unified identity authentication interface (let's call it AuthApp for now) for all of OutStem's applications. All of OutStem's apps will redirect the user to AuthApp when authentication is required. Original Links for requirements: <a href="https://github.com/AES-Outreach/Full-Time-Interview-Summer-2022">2022 uOttawa Summer Front-end developer challenge</a>.
 
-I have implement has 6 pages:
+I have implement 6 pages:
 - Sign in options page
 - Sign in with email and password page
 - MFA code page
@@ -16,9 +16,16 @@ I have implement has 6 pages:
 ## Features
 - Use <a href="https://github.com/axios/axios">Axios<a/> to complete the authentication POST request
 - Page slide animation by using <a href="https://www.framer.com/motion/">Framer motion</a>
+- Responsive for all screen size.
 - Implement a password reset UX flow using <a href="https://www.figma.com/file/x76a9fiNXeYeiO0vgvjHsA/User-reset-Password?node-id=1%3A319">Figma</a>
 - Create account page which collects needed information
 - Deploy APP on a third-party platform. Links: https://challenge-two-flax.vercel.app/
+- use React Hooks - useState, useContext, useNavigate, useEffect
+- use Third Party UI components(React Bootstrap) to implement quick development
 - ... More
 
 ## Reset Password UX flow
+<img src="https://github.com/Dwightu/uOttawa-Challenge/blob/master/UX%20flow.png" width="1000px">
+  
+## Demo
+<img src="https://github.com/Dwightu/uOttawa-Challenge/blob/master/demo1.png" width="500px">
