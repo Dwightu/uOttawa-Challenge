@@ -2,8 +2,8 @@ import { createContext } from "react";
 
 import axios from "axios";
 import { flash } from "react-universal-flash";
-import { navigate } from "react";
 
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -12,6 +12,7 @@ const AuthContext = createContext()
 
 
 export const AuthProvider = ({ children }) => {
+    const navigate = useNavigate();
 
     const validateMFA = async (email, MFA) => {
         console.log('context is doing')
