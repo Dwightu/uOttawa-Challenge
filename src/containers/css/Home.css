@@ -8,7 +8,7 @@
 
 }
 
-@media (max-width:600px) {
+@media (max-width:772px) {
     .right {
         display: none;
     }
@@ -23,6 +23,12 @@
 
     .socialBtns {
         margin-top: 0%;
+    }
+}
+
+@media (max-width:992px) {
+    .space {
+        display: none !important;
     }
 }
 
