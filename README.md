@@ -12,6 +12,10 @@ All test users have the same password - `testtest`
 
 The valid MFA code for mfa@outstem.io is `123456`
 
+When the user completes the sign in, my app shall redirect the user to the following link:
+
+`https://interview.outstem.io/oauth?identity=SOME_IDENTITY_STRING`
+
 ## The Challenge
 Recently, the business team proposed a unified identity authentication interface (let's call it AuthApp for now) for all of OutStem's applications. All of OutStem's apps will redirect the user to AuthApp when authentication is required. Original Links for requirements: <a href="https://github.com/AES-Outreach/Full-Time-Interview-Summer-2022">2022 uOttawa Summer Front-end developer challenge</a>.
 
