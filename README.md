@@ -1,4 +1,4 @@
-2022 uOttawa Summer Front-end developer challenge
+Auth uOttawa
 =
 This is an unified identity authentication interface called AuthApp for all of OutStem's applications. All of OutStem's apps will redirect the user to AuthApp when authentication is required. <a href="https://challenge-two-flax.vercel.app/">Check my project here</a>
 
