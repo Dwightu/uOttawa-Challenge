@@ -2,6 +2,16 @@
 =
 This is an unified identity authentication interface called AuthApp for all of OutStem's applications. All of OutStem's apps will redirect the user to AuthApp when authentication is required. <a href="https://challenge-two-flax.vercel.app/">Check my project here</a>
 
+## Testing
+To test authentication functionalities, you can use the following usernames:
+- mfa@outstem.io - requires MFA challenge
+- user@outstem.io - no MFA challenge
+- Every other username will result in a 400.
+
+All test users have the same password - `testtest`
+
+The valid MFA code for mfa@outstem.io is `123456`
+
 ## The Challenge
 Recently, the business team proposed a unified identity authentication interface (let's call it AuthApp for now) for all of OutStem's applications. All of OutStem's apps will redirect the user to AuthApp when authentication is required. Original Links for requirements: <a href="https://github.com/AES-Outreach/Full-Time-Interview-Summer-2022">2022 uOttawa Summer Front-end developer challenge</a>.
 
